@@ -27,8 +27,32 @@ const Product = () => {
   },[]);
 
   // console.log(data);
-  const handleAddCart=()=>{
-    setAddCart(false);
+
+
+
+const handleIc=()=>{
+  setNoOfProduct(noOfProduct+1)
+}
+const handleDe=()=>{
+  if(noOfProduct>1){
+    setNoOfProduct(noOfProduct-1)
+  }
+
+}
+
+  const handleAddCart=({id})=>{
+    data.map((product)=>{
+      // console.log(product.id)
+      if(product.id===id){
+        setAddCart(false);
+        
+      }
+    })
+   
+    
+  }
+  const handleRemoveCart=()=>{
+    setAddCart(true);
   }
  
 
@@ -36,7 +60,7 @@ const Product = () => {
 
   return (
     <>
-    <h1>Products</h1>
+   
     <div style={{
       width:"100px",
         display:"grid",
@@ -60,17 +84,17 @@ const Product = () => {
           <h3 data-cy="product-name">{product.name}</h3>
           <h6 data-cy="product-description">{product.description}</h6>
           {
-            addCart ? <button data-cy="product-add-item-to-cart-button"  onClick={handleAddCart(product.id)}> Add To Cart</button> 
+            addCart ? <button data-cy="product-add-item-to-cart-button"  onClick={()=>handleAddCart(product)}> Add To Cart</button> 
                     : (
                       <div>
-                      <button  data-cy="product-increment-cart-item-count-button" onClick={()=>setNoOfProduct(noOfProduct+1)} >+</button>
+                      <button  data-cy="product-increment-cart-item-count-button" onClick={()=>handleIc()} >+</button>
                       <span data-cy="product-count"> 
                         {
                           noOfProduct
                         }
                        </span>
-                      <button data-cy="product-decrement-cart-item-count-button" onClick={()=>setNoOfProduct(noOfProduct-1)}>-</button>
-                      <button data-cy="product-remove-cart-item-button" >Remove From Cart</button>
+                      <button data-cy="product-decrement-cart-item-count-button" onClick={()=>handleDe()}>-</button>
+                      <button data-cy="product-remove-cart-item-button" onClick={handleRemoveCart} >Remove From Cart</button>
                     </div>
                     )
           }

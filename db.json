@@ -58,14 +58,14 @@
       "id": 8
     },
     {
-      "productId": 3,
+      "productId": 8,
       "count": 1,
-      "id": 9
+      "id": 12
     },
     {
-      "productId": 1,
+      "productId": 6,
       "count": 1,
-      "id": 10
+      "id": 13
     }
   ]
 }
