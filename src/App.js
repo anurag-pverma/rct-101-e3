@@ -1,8 +1,10 @@
 import "./App.css";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import { Routes , Route} from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+// import Showtodo from "./Components2/Showtodo"; 
+import Todo from "./Components2/Todo";
+// import Home from "./pages/Home";
+// import Login from "./pages/Login";
+// import { Routes , Route} from "react-router-dom";
+// import Navbar from "./components/Navbar/Navbar";
 
 
 function App() {
@@ -12,15 +14,23 @@ function App() {
         // Code here
         
       }
-      <Navbar/>
-      {/* <Login/> */}
+      {/* <Navbar/> */}
+      {/* <Login/>
       <Routes>
       <Route path="" element={<Login/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/home" element={<Home/>}/>
 
       </Routes>
-    
+     */}
+
+     {/* *************************************** */}
+    <Todo/>
+    {/* <Showtodo/> */}
+
+     
+
+
 
 
       
